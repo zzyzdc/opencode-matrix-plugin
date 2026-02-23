@@ -1,0 +1,46 @@
+{
+  "name": "opencode-matrix-plugin",
+  "version": "1.2.0",
+  "description": "Matrix messaging integration for OpenCode with E2EE, Excel support, model switching and image analysis",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start-matrix-ai.js",
+    "postinstall": "node -e \"console.log('\\n✅ Matrix Plugin installed!\\n📝 Copy .env.example to .env and configure your Matrix account.\\n')\""
+  },
+  "dependencies": {
+    "@matrix-org/matrix-sdk-crypto-nodejs": "^0.4.0",
+    "@vector-im/matrix-bot-sdk": "0.8.0-element.3",
+    "better-sqlite3": "^12.6.2",
+    "dotenv": "^17.3.1",
+    "xlsx": "^0.18.5",
+    "zod": "^4.3.6"
+  },
+  "keywords": [
+    "opencode",
+    "matrix",
+    "chat",
+    "bot",
+    "e2ee",
+    "encryption",
+    "messaging",
+    "ai",
+    "excel",
+    "image",
+    "multimodal",
+    "model-switching"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Worker-intelligence/opencode-matrix-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Worker-intelligence/opencode-matrix-plugin/issues"
+  },
+  "homepage": "https://github.com/Worker-intelligence/opencode-matrix-plugin#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
