@@ -1,4 +1,4 @@
-import Database from 'bun:sqlite'
+import Database from 'better-sqlite3'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -412,11 +412,9 @@ export class PreferenceStore {
         WHERE timestamp < ?
       `)
       
-      stmt.run(cutoffDate)
-      const changes = this.db.changes
-      console.log(`✅ 清理 ${changes} 条旧的使用记录`)
-      
-      return { success: true, recordsDeleted: changes }
+      const result = stmt.run(cutoffDate)
+      console.log(`✅ 清理 ${result.changes} 条旧的使用记录`)
+      return { success: true, recordsDeleted: result.changes }
       
     } catch (error) {
       console.error('❌ 清理旧记录失败:', error.message)
